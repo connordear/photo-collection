@@ -38,7 +38,7 @@
                     <navigationItem key="navigationItem" id="ADC-Km-lpU">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="gjm-p3-7ST">
                             <connections>
-                                <segue destination="jHI-4W-oUb" kind="show" id="TZN-eW-2EJ"/>
+                                <segue destination="jHI-4W-oUb" kind="show" identifier="photoSegue" id="TZN-eW-2EJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -82,15 +82,24 @@
                                     <action selector="addTapped:" destination="jHI-4W-oUb" eventType="touchUpInside" id="G35-Up-jZR"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBE-Fm-68S">
+                                <rect key="frame" x="164.5" y="404" width="45" height="30"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="deleteTapped:" destination="jHI-4W-oUb" eventType="touchUpInside" id="g6H-BY-Ubv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Qmv-gg-984" firstAttribute="centerX" secondItem="GLo-j8-UxA" secondAttribute="centerX" id="8RW-UK-bH0"/>
+                            <constraint firstItem="gBE-Fm-68S" firstAttribute="centerX" secondItem="GLo-j8-UxA" secondAttribute="centerX" id="Fv1-KK-28J"/>
                             <constraint firstItem="W7T-Ev-vwg" firstAttribute="width" secondItem="rrd-f8-1zN" secondAttribute="width" id="PpM-Pw-lvw"/>
                             <constraint firstItem="W7T-Ev-vwg" firstAttribute="centerX" secondItem="GLo-j8-UxA" secondAttribute="centerX" id="UEQ-J7-eFd"/>
                             <constraint firstItem="Qmv-gg-984" firstAttribute="top" secondItem="W7T-Ev-vwg" secondAttribute="bottom" constant="20" id="V9d-yV-COm"/>
                             <constraint firstItem="rrd-f8-1zN" firstAttribute="top" secondItem="vtl-3Q-dAQ" secondAttribute="bottom" constant="20" id="WNZ-HE-PvA"/>
                             <constraint firstItem="rrd-f8-1zN" firstAttribute="centerX" secondItem="GLo-j8-UxA" secondAttribute="centerX" id="s0q-JS-5zy"/>
+                            <constraint firstItem="gBE-Fm-68S" firstAttribute="top" secondItem="Qmv-gg-984" secondAttribute="bottom" constant="20" id="uNF-wj-ma5"/>
                             <constraint firstItem="W7T-Ev-vwg" firstAttribute="top" secondItem="rrd-f8-1zN" secondAttribute="bottom" constant="20" id="wAJ-HS-Zaa"/>
                         </constraints>
                     </view>
@@ -109,13 +118,15 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="addUpdateButton" destination="Qmv-gg-984" id="gnY-Ji-MMf"/>
+                        <outlet property="deleteButton" destination="gBE-Fm-68S" id="GqK-xb-bT2"/>
                         <outlet property="photoImageView" destination="rrd-f8-1zN" id="b0r-7f-f9K"/>
                         <outlet property="titleField" destination="W7T-Ev-vwg" id="6nM-h6-akw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6bS-MU-T0x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1495" y="790"/>
+            <point key="canvasLocation" x="1493.5999999999999" y="789.35532233883066"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HQR-YI-MMx">

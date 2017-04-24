@@ -28,8 +28,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = UITableViewCell()
         let photoForCurrentCell = photos[indexPath.row]
         cell.textLabel?.text = photoForCurrentCell.title
-        cell.imageView?.image = UIImage(data: photoForCurrentCell.photo as! Data)
+        cell.imageView?.image = UIImage(data: photoForCurrentCell.photo! as Data)
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let photo = photos[indexPath.row]
+        performSegue(withIdentifier: "photoSegue", sender: photo)
+        
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC = segue.destination as! PhotoViewController
+        nextVC.existingPhoto = sender as? Photo
     }
     override func viewWillAppear(_ animated: Bool) {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
